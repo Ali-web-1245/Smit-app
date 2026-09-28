@@ -1,0 +1,120 @@
+.teacher-layout {
+  min-height: 100vh;
+  background: #f8fafc !important;
+  color: #111827;
+}
+
+.teacher-layout .teacher-main-area {
+  margin-left: 197px !important;
+  padding: 24px 30px !important;
+  box-sizing: border-box;
+  width: auto !important;
+  background: transparent !important;
+  transition: margin-left 0.3s ease, padding 0.3s ease;
+}
+
+/* Sidebar band ho to content poori chaudai le */
+.teacher-layout.sidebar-collapsed .teacher-main-area {
+  margin-left: 0 !important;
+  padding-left: 60px !important; /* toggle button ke liye jagah */
+}
+
+.teacher-layout .teacher-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.teacher-layout .breadcrumb-line { font-size: 12px; color: #6b7280; }
+.teacher-layout .breadcrumb-line span { color: #111827; font-weight: 600; }
+
+.teacher-layout .feedback-outline-btn {
+  padding: 8px 14px;
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.teacher-layout .course-title-banner {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.teacher-layout .course-title-banner h2 { margin: 0; font-size: 20px; color: #111827; }
+
+.teacher-layout .tabs-navigation-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.teacher-layout .tabs-navigation-bar .tab-btn {
+  flex: none;
+  padding: 8px 14px;
+  background: #fff;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.teacher-layout .tabs-navigation-bar .tab-btn.active {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+  font-weight: 600;
+}
+
+.teacher-layout .tab-view-viewport {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  color: #111827;
+}
+
+/* ===== Mobile / Tablet ===== */
+@media (max-width: 768px) {
+  .teacher-layout .teacher-main-area,
+  .teacher-layout.sidebar-collapsed .teacher-main-area {
+    margin-left: 0 !important;
+    padding: 64px 12px 14px !important; /* upar toggle button ke liye jagah */
+    width: 100% !important;
+  }
+
+  .teacher-layout .course-title-banner { padding: 14px 16px; }
+  .teacher-layout .course-title-banner h2 { font-size: 16px; }
+
+  .teacher-layout .tabs-navigation-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .teacher-layout .tabs-navigation-bar::-webkit-scrollbar { display: none; }
+  .teacher-layout .tabs-navigation-bar .tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .teacher-layout .tab-view-viewport { padding: 12px; }
+}
+
+/* ===== Dark mode ===== */
+.teacher-layout.dark-mode { background: #0b1220 !important; color: #e5e7eb; }
+.dark-mode .course-title-banner,
+.dark-mode .tab-view-viewport,
+.dark-mode .feedback-outline-btn,
+.dark-mode .tabs-navigation-bar .tab-btn { background: #131c30; border-color: #263248; color: #e5e7eb; }
+.dark-mode .tabs-navigation-bar .tab-btn.active { background: #0c2340; color: #38bdf8; border-color: #12355e; }
+.dark-mode .course-title-banner h2,
+.dark-mode .breadcrumb-line span { color: #fff; }

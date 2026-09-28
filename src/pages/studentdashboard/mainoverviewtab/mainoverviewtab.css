@@ -1,0 +1,326 @@
+/* ===== Theme colors ===== */
+.overview-tab-container {
+  --ov-card: #ffffff;
+  --ov-border: #e5e7eb;
+  --ov-text: #111827;
+  --ov-muted: #6b7280;
+  --ov-chip: #f3f4f6;
+  --ov-chip-text: #4b5563;
+  --ov-track: #e5e7eb;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--ov-text);
+}
+
+.theme-dark .overview-tab-container {
+  --ov-card: #131c30;
+  --ov-border: #263248;
+  --ov-text: #f1f5f9;
+  --ov-muted: #94a3b8;
+  --ov-chip: #1f2a40;
+  --ov-chip-text: #94a3b8;
+  --ov-track: #263248;
+}
+
+.overview-tab-container * { box-sizing: border-box; }
+
+/* ===== Top grid: 2 KPI + schedule ===== */
+.overview-tab-container .overview-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr;
+  gap: 16px;
+}
+
+.overview-tab-container .std-kpi-card,
+.overview-tab-container .schedule-side-card,
+.overview-tab-container .course-banner-card,
+.overview-tab-container .fee-summary-card {
+  background: var(--ov-card);
+  border: 1px solid var(--ov-border);
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.overview-tab-container .std-kpi-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px;
+}
+
+.overview-tab-container .kpi-num {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ov-text);
+}
+
+.overview-tab-container .kpi-title {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--ov-muted);
+}
+
+.overview-tab-container .kpi-circle-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+}
+.overview-tab-container .icon-green { background: #dcfce7; }
+.overview-tab-container .icon-purple { background: #f3e8ff; }
+.theme-dark .overview-tab-container .icon-green { background: #12352a; }
+.theme-dark .overview-tab-container .icon-purple { background: #2a2350; }
+
+/* ===== Schedule ===== */
+.overview-tab-container .schedule-side-card { padding: 16px 18px; }
+
+.overview-tab-container .card-head-sm {
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ov-text);
+}
+
+.overview-tab-container .schedule-days-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.overview-tab-container .day-box {
+  flex: 1 1 auto;
+  padding: 5px 8px;
+  text-align: center;
+  white-space: nowrap;
+  background: var(--ov-chip);
+  color: var(--ov-chip-text);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.overview-tab-container .day-box.active {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+/* ===== Active course ===== */
+.overview-tab-container .cb-head {
+  padding: 18px 22px 0;
+}
+.overview-tab-container .cb-head h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ov-muted);
+}
+
+.overview-tab-container .cb-body { padding: 10px 22px 22px; }
+
+.overview-tab-container .cb-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.overview-tab-container .cb-title-row h2 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--ov-text);
+}
+
+.overview-tab-container .enrolled-badge {
+  padding: 4px 12px;
+  background: #e0f2fe;
+  color: #0369a1;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+.theme-dark .overview-tab-container .enrolled-badge {
+  background: #0c2340;
+  color: #38bdf8;
+}
+
+.overview-tab-container .timing-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.overview-tab-container .t-pill {
+  padding: 7px 14px;
+  background: var(--ov-chip);
+  color: var(--ov-chip-text);
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.overview-tab-container .progress-section-inline { margin-bottom: 18px; }
+.overview-tab-container .p-lbl-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: var(--ov-muted);
+}
+.overview-tab-container .p-val { color: #16a34a; font-weight: 600; }
+
+.overview-tab-container .p-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: var(--ov-track);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.overview-tab-container .p-bar-fill {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.overview-tab-container .info-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ov-border);
+  font-size: 13px;
+  color: var(--ov-muted);
+}
+.overview-tab-container .info-meta-grid strong {
+  color: var(--ov-text);
+  word-break: break-word;
+}
+
+/* ===== Fee status ===== */
+.overview-tab-container .fee-summary-card { padding: 18px 22px; }
+.overview-tab-container .fee-summary-card h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: var(--ov-text);
+}
+
+.overview-tab-container .fee-table-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--ov-text);
+}
+.overview-tab-container .fee-table-row .lbl { color: var(--ov-muted); }
+.overview-tab-container .fee-table-row > div:last-child { justify-self: end; }
+
+.overview-tab-container .paid-chip {
+  display: inline-block;
+  padding: 5px 14px;
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.theme-dark .overview-tab-container .paid-chip {
+  background: #12352a;
+  color: #4ade80;
+}
+
+/* ===== Tablet (<= 1100px) ===== */
+@media (max-width: 1100px) {
+  .overview-tab-container .overview-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* schedule poori chaudai le */
+  .overview-tab-container .schedule-side-card { grid-column: 1 / -1; }
+
+  .overview-tab-container .info-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .overview-tab-container .fee-table-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .overview-tab-container .fee-table-row > div:last-child { justify-self: start; }
+}
+
+/* ===== Mobile (<= 640px) ===== */
+@media (max-width: 640px) {
+  .overview-tab-container { gap: 12px; }
+
+  .overview-tab-container .overview-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .overview-tab-container .std-kpi-card {
+    padding: 14px;
+    gap: 8px;
+  }
+  .overview-tab-container .kpi-num { font-size: 20px; }
+  .overview-tab-container .kpi-title { font-size: 12px; }
+  .overview-tab-container .kpi-circle-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .overview-tab-container .schedule-side-card { padding: 14px; }
+  .overview-tab-container .day-box {
+    padding: 6px 4px;
+    min-width: calc(25% - 6px);   /* 4 + 3 ki do lines */
+  }
+
+  .overview-tab-container .cb-head { padding: 14px 14px 0; }
+  .overview-tab-container .cb-body { padding: 8px 14px 16px; }
+  .overview-tab-container .cb-title-row h2 { font-size: 16px; }
+
+  /* timing pills ek ke neeche ek, poori chaudai */
+  .overview-tab-container .timing-pills-row { flex-direction: column; gap: 6px; }
+  .overview-tab-container .t-pill { white-space: normal; text-align: center; }
+
+  .overview-tab-container .info-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .overview-tab-container .fee-summary-card { padding: 14px; }
+
+  /* fee: label left, value right */
+  .overview-tab-container .fee-table-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .overview-tab-container .fee-table-row > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .overview-tab-container .fee-table-row > div:last-child {
+    justify-self: stretch;
+    padding-top: 8px;
+    border-top: 1px solid var(--ov-border);
+  }
+}
+
+/* ===== Bahut chhoti screen (<= 380px) ===== */
+@media (max-width: 380px) {
+  .overview-tab-container .overview-top-grid { grid-template-columns: 1fr; }
+  .overview-tab-container .day-box { min-width: calc(33.33% - 6px); }
+}

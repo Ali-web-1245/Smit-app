@@ -1,0 +1,13 @@
+.smit-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smit-logo-img {
+  width: 200px;      
+  height: auto;     
+  max-width: 100%;   
+  object-fit: contain;
+  display: block;
+}

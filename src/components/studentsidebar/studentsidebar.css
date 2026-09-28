@@ -1,0 +1,122 @@
+.student-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 197px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  box-sizing: border-box;
+  z-index: 30;
+  transition: transform 0.3s ease;
+}
+
+.student-sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.student-sidebar .sidebar-logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.student-sidebar .sidebar-logo-container .smit-logo-img {
+  width: 130px;
+}
+
+.student-sidebar .sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+}
+
+.student-sidebar .nav-item-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #4b5563;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+.student-sidebar .nav-item-btn:hover { background: #f3f4f6; }
+.student-sidebar .nav-item-btn.active {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 600;
+}
+
+/* Toggle button */
+.student-toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: -14px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 40;
+  transition: right 0.3s ease, background 0.2s;
+}
+.student-toggle-btn:hover { background: #1d4ed8; }
+
+/* Sidebar band ho to button screen ke andar nazar aaye */
+.student-sidebar.collapsed .student-toggle-btn {
+  right: -44px;
+}
+
+/* Overlay: desktop par chhupa hua */
+.student-sidebar-overlay { display: none; }
+
+/* Profile menu wrapper: sidebar ke upar nazar aaye */
+.student-profile-wrap {
+  position: relative;
+  z-index: 35;
+}
+
+/* Dark theme */
+.theme-dark .student-sidebar { background: #050b18; border-color: #1f2937; }
+.theme-dark .student-sidebar .sidebar-logo-container { border-color: #1f2937; }
+.theme-dark .student-sidebar .nav-item-btn { color: #cbd5e1; }
+.theme-dark .student-sidebar .nav-item-btn:hover { background: #111a2e; }
+.theme-dark .student-sidebar .nav-item-btn.active { background: #0c2340; color: #38bdf8; }
+
+/* ===== Mobile / Tablet: drawer ===== */
+@media (max-width: 900px) {
+  .student-sidebar {
+    width: 240px;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .student-sidebar .sidebar-logo-container .smit-logo-img { width: 110px; }
+
+  .student-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    z-index: 20;
+  }
+
+  /* drawer band ho to avatar chhupa do, warna content ke upar aata hai */
+  .student-dashboard-layout.sidebar-collapsed .student-profile-wrap {
+    display: none;
+  }
+}

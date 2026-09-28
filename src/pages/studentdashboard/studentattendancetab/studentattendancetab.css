@@ -1,0 +1,280 @@
+/* ===== Wrapper ===== */
+.std-attendance-tab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.std-attendance-tab * { box-sizing: border-box; }
+
+/* ===== Stat cards ===== */
+.std-attendance-tab .att-stats-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.std-attendance-tab .att-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 0;
+}
+
+.std-attendance-tab .att-num {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-main, #111827);
+}
+.std-attendance-tab .green-txt { color: #22c55e; }
+.std-attendance-tab .yellow-txt { color: #eab308; }
+.std-attendance-tab .red-txt { color: #ef4444; }
+
+.std-attendance-tab .att-lbl {
+  font-size: 13px;
+  color: var(--text-muted, #6b7280);
+}
+
+/* ===== Progress banner ===== */
+.std-attendance-tab .att-progress-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.std-attendance-tab .p-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.std-attendance-tab .p-head-row h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: var(--text-main, #111827);
+}
+
+.std-attendance-tab .warning-text {
+  margin: 0;
+  font-size: 13px;
+  color: #ef4444;
+}
+.std-attendance-tab .warning-text.good-text { color: #16a34a; }
+
+.std-attendance-tab .att-percentage {
+  flex-shrink: 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+.std-attendance-tab .att-percentage.low { color: #ef4444; }
+.std-attendance-tab .att-percentage.good { color: #22c55e; }
+
+.std-attendance-tab .att-bar-bg {
+  width: 100%;
+  height: 10px;
+  background: var(--border-color, #e5e7eb);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.std-attendance-tab .att-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+.std-attendance-tab .att-bar-fill.low { background: #ef4444; }
+.std-attendance-tab .att-bar-fill.good { background: #22c55e; }
+
+/* ===== Table wrapper ===== */
+.std-attendance-tab .att-table-wrapper {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 0;
+}
+
+.std-attendance-tab .table-top-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.std-attendance-tab .month-picker {
+  padding: 8px 12px;
+  background: var(--bg-card, #ffffff);
+  color: var(--text-main, #111827);
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.std-attendance-tab .month-picker:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ===== Logs table ===== */
+.std-attendance-tab .att-th,
+.std-attendance-tab .att-tr {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 1.2fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 8px;
+}
+
+.std-attendance-tab .att-th {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted, #6b7280);
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.std-attendance-tab .att-tr {
+  font-size: 13px;
+  color: var(--text-main, #111827);
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+.std-attendance-tab .att-tr:last-child { border-bottom: none; }
+.std-attendance-tab .att-class-no { font-weight: 600; }
+
+.std-attendance-tab .status-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.std-attendance-tab .status-pill.present { background: rgba(34, 197, 94, 0.2); color: #16a34a; }
+.std-attendance-tab .status-pill.absent { background: rgba(239, 68, 68, 0.2); color: #dc2626; }
+.std-attendance-tab .status-pill.leave { background: rgba(234, 179, 8, 0.2); color: #ca8a04; }
+
+/* ===== Pagination ===== */
+.std-attendance-tab .std-pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  margin-top: 4px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  font-size: 13px;
+  color: var(--text-muted, #6b7280);
+}
+
+.std-attendance-tab .std-pagination-bar button {
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--text-main, #111827);
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.std-attendance-tab .std-pagination-bar button:hover:not(:disabled) {
+  background: rgba(148, 163, 184, 0.2);
+}
+.std-attendance-tab .std-pagination-bar button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.std-attendance-tab .page-info { font-weight: 600; white-space: nowrap; }
+
+/* ===== Tablet (<= 900px) ===== */
+@media (max-width: 900px) {
+  .std-attendance-tab .att-stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .std-attendance-tab .att-card { padding: 16px; }
+  .std-attendance-tab .att-progress-card { padding: 16px; }
+  .std-attendance-tab .att-table-wrapper { padding: 14px 16px; }
+}
+
+/* ===== Mobile (<= 640px) ===== */
+@media (max-width: 640px) {
+  .std-attendance-tab { gap: 12px; }
+
+  .std-attendance-tab .att-stats-cards { gap: 10px; }
+  .std-attendance-tab .att-card { padding: 14px 12px; }
+  .std-attendance-tab .att-num { font-size: 22px; }
+  .std-attendance-tab .att-lbl { font-size: 12px; }
+
+  .std-attendance-tab .att-progress-card { padding: 14px; }
+  .std-attendance-tab .p-head-row h4 { font-size: 15px; }
+  .std-attendance-tab .warning-text { font-size: 12px; }
+  .std-attendance-tab .att-percentage { font-size: 22px; }
+  .std-attendance-tab .att-bar-bg { height: 8px; }
+
+  /* table -> cards */
+  .std-attendance-tab .att-table-wrapper {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .std-attendance-tab .table-top-actions { margin-bottom: 10px; }
+  .std-attendance-tab .month-picker {
+    width: 100%;
+    font-size: 16px; /* iPhone zoom rokne ke liye */
+    padding: 10px 12px;
+  }
+
+  .std-attendance-tab .att-th { display: none; }
+
+  .std-attendance-tab .att-tr {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    background: var(--bg-card, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .std-attendance-tab .att-tr:last-child { border-bottom: 1px solid var(--border-color, #e5e7eb); }
+
+  .std-attendance-tab .att-tr > [data-label] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+  }
+  .std-attendance-tab .att-tr > [data-label]::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--text-muted, #9ca3af);
+    text-align: left;
+  }
+
+  /* pagination alag card */
+  .std-attendance-tab .std-pagination-bar {
+    background: var(--bg-card, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 0;
+  }
+  .std-attendance-tab .std-pagination-bar button { padding: 9px 12px; }
+}
+
+/* ===== Bahut chhoti screen (<= 380px) ===== */
+@media (max-width: 380px) {
+  .std-attendance-tab .att-num { font-size: 19px; }
+  .std-attendance-tab .std-pagination-bar { font-size: 12px; }
+  .std-attendance-tab .std-pagination-bar button { padding: 8px 10px; font-size: 12px; }
+}

@@ -1,0 +1,118 @@
+/* ===== Theme variables ===== */
+.student-dashboard-layout {
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e5e7eb;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+
+  min-height: 100vh;
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.student-dashboard-layout.theme-dark {
+  --bg-page: #0b1220;
+  --bg-card: #131c30;
+  --border-color: #263248;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+.student-dashboard-layout * { box-sizing: border-box; }
+
+/* ===== Main content ===== */
+.student-dashboard-layout .student-main-content {
+  margin-left: 197px;          /* sidebar ki chaudai */
+  padding: 24px 30px;
+  min-width: 0;
+  transition: margin-left 0.3s ease, padding 0.3s ease;
+}
+
+/* Sidebar band ho to content poori chaudai le */
+.student-dashboard-layout.sidebar-collapsed .student-main-content {
+  margin-left: 0;
+  padding-left: 60px;          /* toggle button ke liye jagah */
+}
+
+/* ===== Header bar ===== */
+.student-dashboard-layout .student-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.student-dashboard-layout .breadcrumb {
+  font-size: 12px;
+  color: var(--text-muted);
+  min-width: 0;
+}
+.student-dashboard-layout .breadcrumb span {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.student-dashboard-layout .feedback-btn {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.student-dashboard-layout .feedback-btn:hover {
+  background: rgba(148, 163, 184, 0.15);
+}
+
+.student-dashboard-layout .tab-render-area {
+  width: 100%;
+  min-width: 0;
+}
+
+/* ===== Tablet (<= 900px): sidebar drawer ban jati hai ===== */
+@media (max-width: 900px) {
+  .student-dashboard-layout .student-main-content,
+  .student-dashboard-layout.sidebar-collapsed .student-main-content {
+    margin-left: 0;
+    padding: 64px 20px 20px;   /* upar toggle button ke liye jagah */
+  }
+
+  /* drawer band ho to avatar chhupa do, warna content ke upar aata hai */
+  .student-dashboard-layout.sidebar-collapsed .student-profile-wrap {
+    display: none;
+  }
+}
+
+/* ===== Mobile (<= 640px) ===== */
+@media (max-width: 640px) {
+  .student-dashboard-layout .student-main-content,
+  .student-dashboard-layout.sidebar-collapsed .student-main-content {
+    padding: 60px 12px 16px;
+  }
+
+  .student-dashboard-layout .student-header-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .student-dashboard-layout .feedback-btn {
+    padding: 7px 12px;
+  }
+}
+
+/* ===== Bahut chhoti screen (<= 380px) ===== */
+@media (max-width: 380px) {
+  .student-dashboard-layout .student-main-content,
+  .student-dashboard-layout.sidebar-collapsed .student-main-content {
+    padding: 58px 10px 14px;
+  }
+
+  .student-dashboard-layout .breadcrumb { font-size: 11px; }
+}

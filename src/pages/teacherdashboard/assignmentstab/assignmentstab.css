@@ -1,0 +1,265 @@
+/* ===== Wrapper ===== */
+.assignments-tab {
+  width: 100%;
+}
+
+.assignments-tab .assignments-top-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.assignments-tab .new-assignment-btn {
+  padding: 10px 18px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.assignments-tab .new-assignment-btn:hover { background: #1d4ed8; }
+
+/* ===== Table ===== */
+.assignments-tab .data-table-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.assignments-tab .ass-teacher-header,
+.assignments-tab .ass-teacher-row {
+  display: grid;
+  grid-template-columns: 1.6fr 2fr 1.6fr 1fr 1.3fr;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 20px;
+}
+
+.assignments-tab .ass-teacher-header {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #6b7280;
+}
+
+.assignments-tab .ass-teacher-row {
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #374151;
+  transition: background 0.15s;
+}
+.assignments-tab .ass-teacher-row:last-child { border-bottom: none; }
+.assignments-tab .ass-teacher-row:hover { background: #f8fafc; }
+
+.assignments-tab .ass-teacher-row > * { min-width: 0; }
+
+/* Title */
+.assignments-tab .ass-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.assignments-tab .ass-name {
+  font-weight: 600;
+  color: #111827;
+  word-break: break-word;
+}
+.assignments-tab .hackathon-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #fef3c7;
+  color: #b45309;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Description */
+.assignments-tab .ass-desc {
+  color: #6b7280;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+/* Topics */
+.assignments-tab .topics-chips-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.assignments-tab .t-chip {
+  padding: 3px 9px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #dbeafe;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.assignments-tab .no-topic {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* Due date */
+.assignments-tab .due-date-text {
+  font-weight: 600;
+  color: #7c3aed;
+  white-space: nowrap;
+}
+
+/* Actions */
+.assignments-tab .actions-cell {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.assignments-tab .approve-action-btn {
+  padding: 5px 12px;
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.assignments-tab .approve-action-btn:hover { background: #bbf7d0; }
+
+.assignments-tab .approved-label {
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.assignments-tab .eye-icon,
+.assignments-tab .edit-icon {
+  cursor: pointer;
+  font-size: 15px;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.assignments-tab .eye-icon:hover,
+.assignments-tab .edit-icon:hover { background: #f1f5f9; }
+
+.assignments-tab .ass-empty {
+  margin: 0;
+  padding: 30px 20px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ===== Tablet (<= 1000px) ===== */
+@media (max-width: 1000px) {
+  .assignments-tab .ass-teacher-header,
+  .assignments-tab .ass-teacher-row {
+    grid-template-columns: 1.4fr 1.6fr 1.4fr 0.9fr 1.2fr;
+    gap: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .assignments-tab .ass-teacher-header { font-size: 11px; }
+  .assignments-tab .due-date-text { white-space: normal; }
+}
+
+/* ===== Mobile (<= 720px): table -> cards ===== */
+@media (max-width: 720px) {
+  .assignments-tab .assignments-top-bar { justify-content: stretch; }
+  .assignments-tab .new-assignment-btn { width: 100%; }
+
+  .assignments-tab .data-table-card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .assignments-tab .ass-teacher-header { display: none; }
+
+  .assignments-tab .ass-teacher-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .assignments-tab .ass-teacher-row:last-child { border-bottom: 1px solid #e5e7eb; }
+
+  .assignments-tab .ass-teacher-row > [data-label] {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: right;
+  }
+  .assignments-tab .ass-teacher-row > [data-label]::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #9ca3af;
+    text-align: left;
+    padding-top: 2px;
+  }
+
+  /* right side ka content */
+  .assignments-tab .ass-title-block { align-items: flex-end; }
+  .assignments-tab .topics-chips-cell { justify-content: flex-end; }
+  .assignments-tab .actions-cell {
+    justify-content: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  /* Title/Topics/Actions mein label alag, content alag flex hona chahiye */
+  .assignments-tab .ass-title-block,
+  .assignments-tab .topics-chips-cell,
+  .assignments-tab .actions-cell { flex-direction: row; }
+  .assignments-tab .ass-title-block { flex-wrap: wrap; }
+
+  .assignments-tab .approve-action-btn { padding: 8px 16px; }
+  .assignments-tab .eye-icon,
+  .assignments-tab .edit-icon { font-size: 18px; padding: 6px; }
+}
+
+/* ===== Dark mode ===== */
+.dark-mode .assignments-tab .data-table-card,
+.dark-mode .assignments-tab .ass-teacher-row { background: #131c30; border-color: #263248; }
+.dark-mode .assignments-tab .ass-teacher-header { background: #0f1729; border-color: #263248; color: #94a3b8; }
+.dark-mode .assignments-tab .ass-teacher-row { color: #cbd5e1; border-bottom-color: #1f2a40; }
+.dark-mode .assignments-tab .ass-teacher-row:hover { background: #17233c; }
+.dark-mode .assignments-tab .ass-name { color: #f1f5f9; }
+.dark-mode .assignments-tab .ass-desc { color: #94a3b8; }
+.dark-mode .assignments-tab .hackathon-tag { background: #2a2408; color: #facc15; }
+.dark-mode .assignments-tab .t-chip { background: #0c2340; color: #7dd3fc; border-color: #12355e; }
+.dark-mode .assignments-tab .no-topic { color: #64748b; }
+.dark-mode .assignments-tab .due-date-text { color: #a78bfa; }
+.dark-mode .assignments-tab .approve-action-btn { background: #052e1a; color: #4ade80; border-color: #14532d; }
+.dark-mode .assignments-tab .approved-label { color: #4ade80; }
+.dark-mode .assignments-tab .eye-icon:hover,
+.dark-mode .assignments-tab .edit-icon:hover { background: #1f2a40; }
+.dark-mode .assignments-tab .ass-empty { color: #64748b; }
+
+@media (max-width: 720px) {
+  .dark-mode .assignments-tab .data-table-card { background: transparent; }
+  .dark-mode .assignments-tab .actions-cell { border-top-color: #1f2a40; }
+}

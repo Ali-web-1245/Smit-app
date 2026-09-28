@@ -1,0 +1,11 @@
+/* Styling reused from student login error */
+.general-form-error {
+  background-color: rgba(229, 57, 53, 0.15);
+  border: 1px solid #e53935;
+  color: #ff6b6b;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  text-align: center;
+}
