@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthCard from '../../components/authCard/AuthCard';
-import InputField from '../../components/inputField/InputField';
+import AuthCard from "../../components/authcard/AuthCard";
+import InputField from "../../components/inputfield/InputField";
 import { findStudentByCNIC, saveStudent } from '../../utils/auth';
 import './createpassword.css';
 
